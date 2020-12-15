@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  pool: 5
+
+development:
+  <<: *default
+  database: ruptiva_api_development
+
+test:
+  <<: *default
+  database: ruptiva_api_test
+
+production:
+  <<: *default
+  database: ruptiva_api_production
+  username: ruptiva_api
