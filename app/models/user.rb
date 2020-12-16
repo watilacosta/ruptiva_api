@@ -41,6 +41,5 @@ class User < ActiveRecord::Base
 
   acts_as_paranoid
 
-  validates :first_name, :last_name, :email, :role,
-            :password_confirmation, presence: true
+  validates :first_name, :last_name, :email, :role, presence: true
 end
