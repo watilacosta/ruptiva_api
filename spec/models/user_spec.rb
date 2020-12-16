@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -25,22 +23,23 @@
 #  updated_at             :datetime         not null
 #  deleted_at             :datetime
 #
-class User < ActiveRecord::Base
-  extend Devise::Models
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+require 'rails_helper'
 
-  include DeviseTokenAuth::Concerns::User
+RSpec.describe User, type: :model do
+  describe 'Validations' do
+    it { should define_enum_for(:role).with_values(%i[user admin]) }
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:role) }
+    it { should validate_presence_of(:password) }
+    it { should validate_presence_of(:password_confirmation) }
+  end
 
-  enum role: {
-    user: 0,
-    admin: 1
-  }
-
-  acts_as_paranoid
-
-  validates :first_name, :last_name, :email, :role,
-            :password_confirmation, presence: true
+  describe 'Create User' do
+    it 'when ROLE :admin' do
+      user = create(:user_admin)
+      expect(user.admin?).to be_truthy
+    end
+  end
 end

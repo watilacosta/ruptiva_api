@@ -1,27 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe UserPolicy, type: :policy do
-  let(:user) { User.new }
+  subject { described_class.new(user, user) }
+  let(:user) { build(:user_user) }
 
-  subject { described_class }
+  context 'being a visitor' do
+    let(:user) { nil }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it { is_expected.to forbid_actions(%i[index show update destroy]) }
   end
 
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'when user is an admin' do
+    let(:user) { create(:user_admin) }
+
+    it { is_expected.to  permit_actions(%i[show index destroy create update]) }
   end
 
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'when User is a common user' do
+    it { is_expected.to forbid_actions(%i[index update destroy]) }
   end
 end

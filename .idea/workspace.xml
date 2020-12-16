@@ -2,15 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30c61a58-5edd-42be-9949-d10809d23e83" name="Default Changelist" comment="add any gems to security and permissions">
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/v1/api_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/ams.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/factories/users.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/api/schemas/api/v1/user.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/database_cleaner.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/support/shoulda_matchers.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ruptiva_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ruptiva_api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rspec" beforeDir="false" afterPath="$PROJECT_DIR$/.rspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/api_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/api_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/serializers/user_serializer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/api/v1/user_serializer.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/rack_attack.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/rack_attack.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/policies/user_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/user_policy.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers/api/v1/user_serializer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/api/v1/user_serializer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/mime_types.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/mime_types.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/policies/user_policy_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/policies/user_policy_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +95,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="ruby.docker.id" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="settings.editor.splitter.proportion" value="0.2731855" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/requests/api/v1" />
       <recent name="$PROJECT_DIR$/app/serializers/api/v1" />
     </key>
   </component>
@@ -118,15 +134,27 @@
       <command value="bundle" />
       <command value="rails g devise_token_auth:install User role first_name last_name password password_confirmation auth" />
       <command value="rails g devise_token_auth:install User auth" />
-      <command value="docker-compose run web rails db:migrate" />
       <command value="docker-compose run web rails db:drop db:create db:migrate db:seed" />
-      <command value="docker-compose down --remove-orphans" />
       <command value="docker-compose run web rails g pundit:install" />
       <command value="docker-compose run web rails g pundit:policy user" />
-      <command value="docker-compose up --build" />
       <command value="docker-compose run web rails g serializer user" />
-      <command value="docker-compose run web bundle install" />
       <command value="docker-compose run web rails db:seed" />
+      <command value="docker-compose down --remove-orphans" />
+      <command value="docker-compose ru web bundle exec install" />
+      <command value="docker-compose ru web bundle install" />
+      <command value="docker-compose run web bundle exec install" />
+      <command value="docker-compose run web bundle install" />
+      <command value="docker-compose run web rails g rswag:install" />
+      <command value="docker-compose run web rails g rspec:swagger API::UsersController" />
+      <command value="docker-compose run web rails g migration AddDeletedAtToUsers deleted_at" />
+      <command value="docker-compose run web rails d migration AddDeletedAtToUsers deleted_at" />
+      <command value="docker-compose run web rails g migration AddDeletedAtToUsers deleted_at:datetime:index" />
+      <command value="docker-compose run web rails db:migrate" />
+      <command value="docker-compose run web rails g rspec:model user" />
+      <command value="docker-compose run web bundle install &amp;&amp; bundle exec spring binstub rspec" />
+      <command value="docker-compose up --build" />
+      <command value="docker-compose run web bundle exec spring binstub rspec" />
+      <command value="docker-compose run web rspec bin/rspec" />
     </option>
   </component>
   <component name="RunManager" selected="Rails.Development: ruptiva_api">
@@ -481,13 +509,13 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="HTTP Request.rest-api#1" />
+      <item itemvalue="HTTP Request.rest-api_1#1" />
       <item itemvalue="Rails.Development: ruptiva_api" />
       <item itemvalue="Rails.Production: ruptiva_api" />
       <item itemvalue="Rake.spec: ruptiva_api" />
       <item itemvalue="Rake.test: ruptiva_api" />
       <item itemvalue="Rake.db:create: ruptiva_api" />
-      <item itemvalue="HTTP Request.rest-api#1" />
-      <item itemvalue="HTTP Request.rest-api_1#1" />
     </list>
     <recent_temporary>
       <list>
@@ -508,7 +536,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608037531742</updated>
       <workItem from="1608037532900" duration="6732000" />
-      <workItem from="1608050019512" duration="12904000" />
+      <workItem from="1608050019512" duration="40440000" />
     </task>
     <task id="LOCAL-00001" summary="add any gems to security and permissions">
       <created>1608062480522</created>
@@ -541,6 +569,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ruptiva_api@db_create__ruptiva_api.rcov" NAME="db:create: ruptiva_api Coverage Results" MODIFIED="1608042033520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
-    <SUITE FILE_PATH="coverage/ruptiva_api@Development__ruptiva_api.rcov" NAME="Development: ruptiva_api Coverage Results" MODIFIED="1608081178794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
+    <SUITE FILE_PATH="coverage/ruptiva_api@Development__ruptiva_api.rcov" NAME="Development: ruptiva_api Coverage Results" MODIFIED="1608148044624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
   </component>
 </project>

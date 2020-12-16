@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -25,22 +23,23 @@
 #  updated_at             :datetime         not null
 #  deleted_at             :datetime
 #
-class User < ActiveRecord::Base
-  extend Devise::Models
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+FactoryBot.define do
+  factory :user do
+    email                 { Faker::Internet.email(domain: 'ruptiva') }
+    password              { '123456' }
+    password_confirmation { '123456' }
+    first_name            { Faker::Name.name }
+    last_name             { Faker::Name.name }
 
-  include DeviseTokenAuth::Concerns::User
+    trait :admin do
+      role { :admin }
+    end
 
-  enum role: {
-    user: 0,
-    admin: 1
-  }
+    trait :user do
+      role { :user }
+    end
 
-  acts_as_paranoid
-
-  validates :first_name, :last_name, :email, :role,
-            :password_confirmation, presence: true
+    factory :user_admin, traits: %i[admin]
+    factory :user_user, traits: %i[user]
+  end
 end
