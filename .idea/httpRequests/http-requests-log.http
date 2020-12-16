@@ -1,0 +1,33 @@
+GET http://localhost:3000/api/v1/users
+Accept: application/json
+
+<> 2020-12-15T215443.200.json
+
+###
+
+GET http://localhost:3000/api/v1/users
+Accept: application/json
+
+<> 2020-12-15T215431.200.json
+
+###
+
+GET http://localhost:3000/api/v1/users
+Accept: application/json
+
+<> 2020-12-15T215405.200.json
+
+###
+
+GET http://localhost:3000/api/v1/users
+Accept: application/json
+
+<> 2020-12-15T215302.200.json
+
+###
+
+GET http://localhost:3000/api/v1/users
+Accept: application/json
+
+###
+
