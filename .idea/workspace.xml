@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30c61a58-5edd-42be-9949-d10809d23e83" name="Default Changelist" comment="add any gems to security and permissions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/api/v1/users_request_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/v1/users_request_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/support/api/schemas/api/v1/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/api/schemas/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/support/database_cleaner.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/support/database_cleaner.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
