@@ -24,10 +24,12 @@
 #  deleted_at             :datetime
 #
 FactoryBot.define do
+  password  = Faker::Internet.password
+
   factory :user do
     email                 { Faker::Internet.email(domain: 'ruptiva') }
-    password              { '123456' }
-    password_confirmation { '123456' }
+    password              { password }
+    password_confirmation { password }
     first_name            { Faker::Name.name }
     last_name             { Faker::Name.name }
 

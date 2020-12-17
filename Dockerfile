@@ -6,6 +6,7 @@ FROM ruby:2.7.2 as builder
 RUN apt-get update -qq && apt-get install -y \
     postgresql-client build-essential \
     libnotify-dev && \
+    apt-get install net-tools && \
     rm -rf /var/lib/apt/lists/*
 
 # This is where we build the rails app

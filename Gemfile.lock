@@ -88,6 +88,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.2)
+      devise (>= 4.7.1)
     devise_token_auth (1.1.4)
       bcrypt (~> 3.0)
       devise (> 3.5.2, < 5)
@@ -188,6 +190,7 @@ GEM
     rspec-expectations (3.10.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
+    rspec-json_expectations (2.2.0)
     rspec-mocks (3.10.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
@@ -251,6 +254,7 @@ DEPENDENCIES
   byebug
   database_cleaner-active_record
   debase (~> 0.2.4.1)
+  devise-i18n
   devise_token_auth
   factory_bot_rails
   faker
@@ -264,6 +268,7 @@ DEPENDENCIES
   rack-attack
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.4)
+  rspec-json_expectations
   rspec-rails (~> 4.0.1)
   rswag
   ruby-debug-ide (~> 0.7.2)
@@ -277,4 +282,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.2.1
+   2.2.2

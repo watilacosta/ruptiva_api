@@ -8,10 +8,12 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'pundit/matchers'
 require "json_matchers/rspec"
+require 'database_cleaner/active_record'
+require "rspec/json_expectations"
 
 JsonMatchers.schema_root = "spec/support/api/schemas"
 
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -30,4 +32,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
+
+  config.include RequestSpecHelper, type: :request
 end

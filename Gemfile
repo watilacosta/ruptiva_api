@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.0'
+  # About Set of matchers and helpers to allow you test your APIs responses like a pro
+  gem 'rspec-json_expectations'
 end
 
 group :test do
@@ -72,3 +74,5 @@ gem 'rswag'
 # When your app is using Paranoia, calling destroy on an ActiveRecord object
 # doesn't actually destroy the database record, but just hides it.
 gem "paranoia", "~> 2.2"
+# Translations for the devise gem
+gem 'devise-i18n'

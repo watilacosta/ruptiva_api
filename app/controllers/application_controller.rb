@@ -16,6 +16,8 @@ class ApplicationController < ActionController::API
     render(json: { message: exception.param }, status: :bad_request)
   end
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   protected
 
   def configure_permitted_parameters
@@ -31,5 +33,9 @@ class ApplicationController < ActionController::API
     return if request.headers["Accept"] =~ /vnd\.api\+json/
 
     render nothing: true, status: 406
+  end
+
+  def user_not_authorized
+    render json: { msg: "Usuário não autorizado!" }, status: :unauthorized
   end
 end
