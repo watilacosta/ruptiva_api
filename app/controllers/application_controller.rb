@@ -20,6 +20,10 @@ class ApplicationController < ActionController::API
 
   protected
 
+  def pundit_user
+    current_api_v1_user
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer
       .permit(:sign_up, keys: %i[first_name last_name role])

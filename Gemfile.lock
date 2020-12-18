@@ -254,6 +254,7 @@ DEPENDENCIES
   byebug
   database_cleaner-active_record
   debase (~> 0.2.4.1)
+  devise
   devise-i18n
   devise_token_auth
   factory_bot_rails
