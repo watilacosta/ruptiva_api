@@ -40,6 +40,6 @@ FactoryBot.define do
     end
 
     factory :user_admin, traits: %i[admin]
-    factory :user_user, traits: %i[user]
+    factory :common_user, traits: %i[user]
   end
 end

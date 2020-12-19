@@ -33,7 +33,9 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
-  config.include RequestSpecHelper, type: :request
-
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  config.include Requests::JsonHelpers, type: :request
+
+  config.include Requests::HeaderHelpers, type: :request
 end

@@ -28,17 +28,29 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'Validations' do
     it { should define_enum_for(:role).with_values(%i[user admin]) }
+
     it { should validate_presence_of(:first_name) }
+
     it { should validate_presence_of(:last_name) }
+
     it { should validate_presence_of(:email) }
+
     it { should validate_presence_of(:role) }
+
     it { should validate_presence_of(:password) }
   end
 
   describe 'Create User' do
     it 'when ROLE :admin' do
       user = create(:user_admin)
+
       expect(user.admin?).to be_truthy
+    end
+
+    it 'when ROLE :user' do
+      user = create(:common_user)
+
+      expect(user.user?).to be_truthy
     end
   end
 end

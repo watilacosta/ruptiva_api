@@ -2,43 +2,57 @@ require 'swagger_helper'
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::UsersController', type: :request do
-  describe 'GET /users' do
-    let(:user) { create(:user_admin) }
+  context 'when authenticated' do
+    describe 'GET /users' do
+      context 'when User is an admin' do
+        let(:admin) { create(:user_admin) }
 
-    let(:auth_headers) { user.create_new_auth_token }
+        before do
+          get api_v1_users_path, headers: header_with_authentication(admin)
+        end
 
-    before do
-      sign_in user
+        it { expect_status(:ok) }
 
-      headers = {
-        'Accept'       => 'application/vnd.api+json',
-        'Content-Type' => 'application/json',
-        'access-token' => auth_headers['access-token'],
-        'client'       => auth_headers['client'],
-        'uid'          => auth_headers['uid']
-      }
+        it 'returns users json schema' do
+          expect(response).to match_response_schema('user')
+        end
+      end
 
-      get '/users', headers: headers
+      context  'when User is a common user' do
+        let(:user) { create(:common_user) }
+
+        before do
+          get api_v1_users_path, headers: header_with_authentication(user)
+        end
+
+        it { expect_status(:unauthorized) }
+      end
     end
 
-    context 'When user is admin' do
-      it { expect(response).to have_http_status(:ok) }
+    describe 'POST /users' do
+    end
 
-      # it 'returns users json schema' do
-      #   expect(response).to match_response_schema('user')
-      # end
+    describe 'PATCH /users' do
+    end
+
+    describe 'DELETE /users' do
+    end
+
+    describe 'GET /users/:id' do
     end
   end
 
-  context 'POST /users' do
-  end
+  context 'when unauthenticated ' do
+    describe 'POST /users' do
+    end
 
-  context 'PATCH /users' do
-  end
+    describe 'PATCH /users' do
+    end
 
-  context 'DELETE /users' do
-  end
+    describe 'DELETE /users' do
+    end
 
-  context 'GET /users/:id' do
+    describe 'GET /users/:id' do
+    end
   end
 end
