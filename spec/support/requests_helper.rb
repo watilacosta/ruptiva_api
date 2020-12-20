@@ -17,7 +17,6 @@ module Requests
 
       {
         'Accept'       => 'application/vnd.api+json',
-        'Content-Type' => 'application/json',
         'access-token' => auth_headers['access-token'],
         'client'       => auth_headers['client'],
         'uid'          => auth_headers['uid']

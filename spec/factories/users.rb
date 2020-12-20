@@ -25,11 +25,10 @@
 #
 FactoryBot.define do
   factory :user do
-    email                 { Faker::Internet.email(domain: 'ruptiva') }
-    password              { '12345678' }
-    password_confirmation { '12345678' }
     first_name            { Faker::Name.name }
     last_name             { Faker::Name.name }
+    email                 { Faker::Internet.email(domain: 'ruptiva') }
+    password              { '12345678' }
 
     trait :admin do
       role { :admin }

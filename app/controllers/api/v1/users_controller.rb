@@ -15,14 +15,10 @@ module Api
       end
 
       def create
-        user = User.new(user_params)
+        user = User.create(user_params)
         authorize user
 
-        if user.save
-          render json: user, status: :created
-        else
-          render json: user.errors, status: :unprocessable_entity
-        end
+        render json: user, status: :created
       end
 
       def update
@@ -41,9 +37,7 @@ module Api
       private
 
       def user_params
-        ActiveModelSerializers::Deserialization
-          .jsonapi_parse(params, only: %i[first_name last_name email role
-                                          password password_confirmation])
+        params.require(:user).permit(%i[first_name last_name email password role])
       end
 
       def set_user

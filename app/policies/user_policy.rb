@@ -15,7 +15,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user_admin?
   end
 
   def update?
