@@ -6,7 +6,7 @@ RSpec.describe 'Api::V1::UsersController', type: :request do
   let(:admin) { create(:user_admin) }
 
   context 'when authenticated' do
-    describe 'GET /users' do
+    describe 'GET #index' do
       context 'when User is an admin' do
         before do
           get api_v1_users_path, headers: header_with_authentication(admin)
@@ -28,7 +28,7 @@ RSpec.describe 'Api::V1::UsersController', type: :request do
       end
     end
 
-    describe 'POST /users' do
+    describe 'POST #create' do
       context 'when User is an admin' do
         before do
           attributes = attributes_for(:common_user)
@@ -52,40 +52,133 @@ RSpec.describe 'Api::V1::UsersController', type: :request do
       end
     end
 
-    describe 'PATCH /users' do
-      before do
-        @attributes = attributes_for(:user, first_name: 'Fulano')
+    describe 'PATCH #update' do
+      context 'when User is an admin' do
+        before do
+          @attributes = attributes_for(:user, first_name: 'Fulano')
 
-        patch api_v1_user_path(user.id), params: { user: @attributes },
-                                headers: header_with_authentication(admin)
+          patch api_v1_user_path(user.id), params: { user: @attributes },
+                headers: header_with_authentication(admin)
+        end
+
+        it { expect_status(:ok) }
+
+        it "user are updated with correct data" do
+          user.reload
+          expect(user.first_name).to eql(@attributes[:first_name])
+        end
       end
 
-      it { expect_status(:ok) }
+      context 'when User is a common user' do
+        before do
+          @attributes = attributes_for(:user, first_name: 'Fulano')
 
-      it "user are updated with correct data" do
-        user.reload
-        expect(user.first_name).to eql(@attributes[:first_name])
+          patch api_v1_user_path(user.id), params: { user: @attributes },
+                headers: header_with_authentication(user)
+        end
+
+        it { expect_status(:unauthorized) }
       end
     end
 
-    describe 'DELETE /users' do
+    describe 'DELETE #destroy' do
+      context 'when User is an admin' do
+        before do
+          delete api_v1_user_path(user.id), params: {},
+                 headers: header_with_authentication(admin)
+        end
+
+        it { expect_status(:no_content) }
+
+        it "user are deleted" do
+          expect(User.where(id: user.id).present?).to eql(false)
+        end
+      end
+
+      context 'when User is a common user' do
+        before do
+          delete api_v1_user_path(user.id), params: {},
+                 headers: header_with_authentication(user)
+        end
+
+        it { expect_status(:unauthorized) }
+      end
     end
 
-    describe 'GET /users/:id' do
+    describe 'GET #show' do
+      context 'when User is an admin' do
+        context 'when user exists' do
+          before do
+            get api_v1_user_path(user.id), params: {},
+                headers: header_with_authentication(admin)
+          end
+
+          it { expect_status(:ok) }
+        end
+
+        context 'when user not exists' do
+          before do
+            get api_v1_user_path(-1), params: {},
+                headers: header_with_authentication(admin)
+          end
+
+          it { expect_status(:not_found) }
+        end
+      end
+
+      context 'when User is a common user' do
+        context 'show another user' do
+          let(:another_user) { create(:common_user)}
+
+          before do
+            get api_v1_user_path(another_user.id), params: {},
+                headers: header_with_authentication(user)
+          end
+
+          it { expect_status(:unauthorized) }
+        end
+
+        context 'show self user' do
+          before do
+            get api_v1_user_path(user.id), params: {},
+                headers: header_with_authentication(user)
+          end
+
+          it { expect_status(:ok) }
+        end
+      end
     end
   end
 
-  context 'when unauthenticated ' do
-    describe 'POST /users' do
+  context 'when unauthenticated' do
+    describe 'POST #create' do
+      context "With Invalid authentication headers" do
+        it_behaves_like :deny_without_authorization, :post, '/api/v1/users'
+      end
     end
 
-    describe 'PATCH /users' do
+    describe 'PATCH #update' do
+      context "With Invalid authentication headers" do
+        it_behaves_like :deny_without_authorization, :patch, '/api/v1/users'
+      end
     end
 
-    describe 'DELETE /users' do
+    describe 'DELETE #destroy' do
+      context "With Invalid authentication headers" do
+        let(:common_user) { create(:common_user) }
+
+        it_behaves_like :deny_without_authorization, :delete,
+                        "/api/v1/users/#{common_user}"
+      end
     end
 
-    describe 'GET /users/:id' do
+    describe 'GET #show' do
+      context "With Invalid authentication headers" do
+        let(:common_user) { create(:common_user) }
+
+        it_behaves_like :deny_without_authorization, :get,
+                        "/api/v1/users/#{common_user}"
+      end
     end
   end
 end

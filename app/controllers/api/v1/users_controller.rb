@@ -4,7 +4,7 @@ module Api
       before_action :set_user, only: %i[show update destroy]
 
       def show
-        render json: @user, status: :found
+        render json: @user, status: :ok
       end
 
       def index
@@ -30,7 +30,7 @@ module Api
       def destroy
         @user.destroy
 
-        render json: @user, status: :not_found
+        render json: @user, status: :no_content
       end
 
       private
