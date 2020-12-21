@@ -22,15 +22,14 @@ module Api
       end
 
       def update
-        if @user.update(user_params)
-          render json: @user, status: :ok
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
+        @user.update(user_params)
+
+        render json: @user, status: :ok
       end
 
       def destroy
         @user.destroy
+
         render json: @user, status: :not_found
       end
 

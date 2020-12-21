@@ -54,7 +54,17 @@ RSpec.describe 'Api::V1::UsersController', type: :request do
 
     describe 'PATCH /users' do
       before do
-        patch 
+        @attributes = attributes_for(:user, first_name: 'Fulano')
+
+        patch api_v1_user_path(user.id), params: { user: @attributes },
+                                headers: header_with_authentication(admin)
+      end
+
+      it { expect_status(:ok) }
+
+      it "user are updated with correct data" do
+        user.reload
+        expect(user.first_name).to eql(@attributes[:first_name])
       end
     end
 
