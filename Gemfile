@@ -41,6 +41,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 4.0'
   # About Set of matchers and helpers to allow you test your APIs responses like a pro
   gem 'rspec-json_expectations'
+  # Seamlessly adds a Swagger to Rails-based API's
+  gem "rswag-specs"
 end
 
 group :test do

@@ -254,7 +254,6 @@ DEPENDENCIES
   byebug
   database_cleaner-active_record
   debase (~> 0.2.4.1)
-  devise
   devise-i18n
   devise_token_auth
   factory_bot_rails
@@ -272,6 +271,7 @@ DEPENDENCIES
   rspec-json_expectations
   rspec-rails (~> 4.0.1)
   rswag
+  rswag-specs
   ruby-debug-ide (~> 0.7.2)
   shoulda-matchers (~> 4.0)
   spring
