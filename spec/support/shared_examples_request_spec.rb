@@ -1,5 +1,5 @@
 shared_examples_for :deny_without_authorization do |method_type, action, params = {}|
-  it 'returns unauthrorized(401) request' do
+  it 'returns Not Acceptable(406) request' do
     case method_type
     when :get
       get action,
@@ -9,7 +9,7 @@ shared_examples_for :deny_without_authorization do |method_type, action, params 
       post action,
            params: params,
            headers: header_without_authentication
-    when :put
+    when :patch
       patch action,
           params: params,
           headers: header_without_authentication
@@ -19,6 +19,6 @@ shared_examples_for :deny_without_authorization do |method_type, action, params 
              headers: header_without_authentication
     end
 
-    expect(response.status).to eql(401)
+    expect(response.status).to eq(406)
   end
 end
