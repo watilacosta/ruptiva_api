@@ -1,4 +1,5 @@
 require "swagger_helper"
+
 RSpec.describe "api/v1/users_controller", type: :request do
   path "/api/v1/users" do
     get "List Users" do
