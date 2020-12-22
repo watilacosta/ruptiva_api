@@ -1,24 +1,41 @@
-# README
+# RUPTIVA CHALLENGER API RAILS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TECNOLOGIAS E BIBLIOTECAS UTILIZADAS
 
-Things you may want to cover:
+- DOCKER & DOCKER-COMPOSE (CONTAINER)
+- RUBY
+- RAILS
+- API only
+- DB POSTGRESQL
+- GEM - Rspec (testes automatizados)
+- GEM - devise-token-auth (authenticação de usuários)
+- GEM - pundit (autorização de usuários na api)
+- GEM - rswag (documentação da api)
+- GEM - paranoia (soft-delete)
 
-* Ruby version
+# REQUISITOS PARA INICAR A API
 
-* System dependencies
+- Docker
+- Docker-Compose
 
-* Configuration
+### Rodando o Projeto API
 
-* Database creation
+```sh
+$ git clone https://github.com/watilacosta/ruptiva_api.git
+$ cd /ruptiva_api
+$ docker-compose up --build -d
+$ docker-compose run web bash
+$ rails db:create db:migrate db:seed
+```
 
-* Database initialization
+### Accessando a Documentação da API
 
-* How to run the test suite
+```sh
+$ localhost:3000/api-docs
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Parando a API
 
-* Deployment instructions
-
-* ...
+```sh
+$ docker-compose down --remove-orphans
+```

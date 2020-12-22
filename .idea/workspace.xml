@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30c61a58-5edd-42be-9949-d10809d23e83" name="Default Changelist" comment="add any gems to security and permissions">
-      <change afterPath="$PROJECT_DIR$/spec/requests/api/auth_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/requests/api/users_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/users_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/swagger_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/swagger_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger/v1/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/v1/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -652,7 +649,7 @@
       <workItem from="1608037532900" duration="6732000" />
       <workItem from="1608050019512" duration="42113000" />
       <workItem from="1608639179556" duration="51000" />
-      <workItem from="1608639332147" duration="2314000" />
+      <workItem from="1608639332147" duration="3396000" />
     </task>
     <task id="LOCAL-00001" summary="add any gems to security and permissions">
       <created>1608062480522</created>
