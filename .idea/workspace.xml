@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30c61a58-5edd-42be-9949-d10809d23e83" name="Default Changelist" comment="add any gems to security and permissions">
+      <change afterPath="$PROJECT_DIR$/spec/requests/api/auth_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/requests/api/users_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/api/users_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/swagger_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/swagger_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger/v1/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/v1/swagger.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="credentialsType org.jetbrains.plugins.ruby.remote.RubyCreateRemoteInterpreterDialog$RubyCreateRemoteSdkForm" value="Docker Compose" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mondrian/erp-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
@@ -78,6 +81,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/requests/api" />
       <recent name="$PROJECT_DIR$/spec/integrations" />
       <recent name="$PROJECT_DIR$/spec/support/api/schemas" />
       <recent name="$PROJECT_DIR$/spec/requests/api/v1" />
@@ -137,7 +141,7 @@
       <command value="docker-compose run web rspec bin/rspec" />
     </option>
   </component>
-  <component name="RunManager" selected="RSpec.Api::V1::UsersController">
+  <component name="RunManager" selected="Rails.Development: ruptiva_api">
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -172,7 +176,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Api::V1::UsersController wh... (3)" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+    <configuration type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="ruptiva_api" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -194,10 +198,10 @@
       <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/requests/api/v1/users_request_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/requests/api/users_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Api::V1::UsersController when unauthenticated DELETE #destroy" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="api/v1/users_controller" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -621,18 +625,18 @@
       <item itemvalue="Rake.spec: ruptiva_api" />
       <item itemvalue="Rake.test: ruptiva_api" />
       <item itemvalue="RSpec.Api::V1::UsersController wh..." />
-      <item itemvalue="RSpec.Api::V1::UsersController wh... (3)" />
       <item itemvalue="RSpec.Api::V1::UsersController" />
       <item itemvalue="RSpec.User" />
       <item itemvalue="RSpec.UserPolicy" />
+      <item itemvalue="RSpec.api/v1/users_controller" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="RSpec.Api::V1::UsersController" />
+        <item itemvalue="RSpec.api/v1/users_controller" />
         <item itemvalue="RSpec.UserPolicy" />
         <item itemvalue="RSpec.User" />
         <item itemvalue="RSpec.Api::V1::UsersController wh..." />
-        <item itemvalue="RSpec.Api::V1::UsersController wh... (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -647,6 +651,8 @@
       <updated>1608037531742</updated>
       <workItem from="1608037532900" duration="6732000" />
       <workItem from="1608050019512" duration="42113000" />
+      <workItem from="1608639179556" duration="51000" />
+      <workItem from="1608639332147" duration="2314000" />
     </task>
     <task id="LOCAL-00001" summary="add any gems to security and permissions">
       <created>1608062480522</created>
@@ -684,12 +690,13 @@
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_GE_____1_.rcov" NAME="Api::V1::UsersController GE... (1) Coverage Results" MODIFIED="1608383168466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh_____5_.rcov" NAME="Api::V1::UsersController wh... (5) Coverage Results" MODIFIED="1608558244299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@UserPolicy.rcov" NAME="UserPolicy Coverage Results" MODIFIED="1608578870469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
-    <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController.rcov" NAME="Api::V1::UsersController Coverage Results" MODIFIED="1608578882096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
-    <SUITE FILE_PATH="coverage/ruptiva_api@Development__ruptiva_api.rcov" NAME="Development: ruptiva_api Coverage Results" MODIFIED="1608577972411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
+    <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController.rcov" NAME="Api::V1::UsersController Coverage Results" MODIFIED="1608639523740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
+    <SUITE FILE_PATH="coverage/ruptiva_api@Development__ruptiva_api.rcov" NAME="Development: ruptiva_api Coverage Results" MODIFIED="1608639622160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh_____4_.rcov" NAME="Api::V1::UsersController wh... (4) Coverage Results" MODIFIED="1608556652518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@User.rcov" NAME="User Coverage Results" MODIFIED="1608578854296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh_____3_.rcov" NAME="Api::V1::UsersController wh... (3) Coverage Results" MODIFIED="1608558287729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@db_create__ruptiva_api.rcov" NAME="db:create: ruptiva_api Coverage Results" MODIFIED="1608042033520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
+    <SUITE FILE_PATH="coverage/ruptiva_api@api_v1_users_controller.rcov" NAME="api/v1/users_controller Coverage Results" MODIFIED="1608639195211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh___.rcov" NAME="Api::V1::UsersController wh... Coverage Results" MODIFIED="1608558590201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh_____1_.rcov" NAME="Api::V1::UsersController wh... (1) Coverage Results" MODIFIED="1608555858065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />
     <SUITE FILE_PATH="coverage/ruptiva_api@Api__V1__UsersController_wh_____2_.rcov" NAME="Api::V1::UsersController wh... (2) Coverage Results" MODIFIED="1608552276570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruptiva_api" />

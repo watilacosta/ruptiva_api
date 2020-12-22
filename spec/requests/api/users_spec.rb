@@ -4,7 +4,7 @@ RSpec.describe "api/v1/users_controller", type: :request do
   path "/api/v1/users" do
     get "List Users" do
       tags 'Users'
-      consumes "application/json"
+      consumes "application/vnd.api+json"
 
       response "200", "Listing Users" do
         run_test!
